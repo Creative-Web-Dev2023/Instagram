@@ -1,0 +1,61 @@
+body{
+    margin:0;
+    font-family: fantasy;
+}
+
+/*Header left*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.ul {
+    width:220px;
+    height:100vh;
+    margin-top:0;
+    position:fixed;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
+    padding-inline-start: 25px;  /*Abstand auf der linken Seite des Elements*/
+    list-style-type: none; /*marker von ul entfernen*/
+}
+.list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 8px;
+    border-radius: 10px;
+    width: 200px;
+    cursor: pointer;
+}
+.list:hover {
+    background-color: rgb(236, 233, 233);
+}
+.logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    border-radius: 10px;
+    width:200px;
+    cursor:pointer;
+}
+.instaclone{
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    padding-left: 0;
+    font-size: 34px;
+    margin-bottom: 32px;
+}
+.icon{
+    width:25px;
+}
+.menuLeft{
+    padding-left: 16px;
+}
+.profileimage{
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    border-radius: 100px;
+}
