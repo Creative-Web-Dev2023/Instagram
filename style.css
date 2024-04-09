@@ -1,14 +1,9 @@
+
 body {
   margin: 0;
   font-family: fantasy;
 }
 
-/*Header left*/
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
 .ul {
   width: 220px;
   height: 100vh;
@@ -59,10 +54,46 @@ header {
   object-fit: cover;
   border-radius: 100px;
 }
+
 .mobile {
   display: none;
 }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.header {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 28px;
+  padding-left: 25%;
+}
+.image{
+  width:60px;
+  height:60px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+.imageBorder{
+  border: 2px solid #ec5713;
+  padding:2px;
+}
+.followerList{
+  margin-right: 16px;
+  cursor:pointer;
+}
 
+.story{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
 @media (max-width:1400px){
     .instaclone{
         display: none;
