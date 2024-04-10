@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   </head>
   <body onload="render()">
     <ul class="ul">
       <li class="logo">
-        <img class="icon d-none"src="./icons/instagram2.png"alt="Instaclone"/>
+        <img
+          class="icon d-none"
+          src="./icons/instagram2.png"
+          alt="Instaclone"
+        />
         <p class="instaclone">Instaclone</p>
       </li>
       <li class="list">
@@ -48,21 +51,13 @@
         <p class="menuLeft">Create</p>
       </li>
       <li class="list">
-        <img
-          class="icon profileimage imageBorder"
-          src="./img/profile-img.jpg"
-          alt="Profileimage"
-        />
+        <img class="icon profileimage imageBorder"src="./img/profile-img.jpg"/>
         <p class="menuLeft">Profile</p>
       </li>
     </ul>
     <div class="mobile-header mobile">
       <div class="logo">
-        <img
-          class="icon d-none"
-          src="./icons/instagram2.png"
-          alt="Instaclone"
-        />
+        <img class="icon d-none" src="./icons/instagram2.png"/>
         <p class="instaclone">Instaclone</p>
       </div>
       <div class="mobile-icon">
@@ -76,35 +71,77 @@
       </div>
     </div>
     <ul class="header">
-    <li class="followerList">
-      <img class="image imageBorder" src="./img/sherlight.jpg"/>
-      <p classs="story">sherlight</p>
-    </li>
-    <li class="followerList">
-      <img class="image imageBorder" src="./img/bl_wisan.jpg" />
-      <p classs="story">bl_wisan</p>
-    </li>
-    <li class="followerList">
-      <img class="image imageBorder" src="./img/design.ro.jpg" />
-      <p classs="story">design.ro</p>
-    </li>
-    <li class="followerList">
-      <img class="image imageBorder" src="./img/matto_collors.jpg"/>
-      <p classs="story">matto_colors</p>
-    </li>
-    <li class="followerList">
-      <img class="image imageBorder" src="./img/clausen_sarah.jpg"/>
-      <p classs="story">sarah_clauson</p>
-    </li>
-    <li class="followerList">
-      <img class="image imageBorder" src="./img/tanjia32413.jpg" />
-      <p classs="story">tanjia324413</p>
-    </li>
-    <li class="followerList">
-      <img class="image imageBorder" src="./img/yumtam.jpg"/>
-      <p classs="story">yumtam</p>
-    </li>
-  </ul>
+      <li class="followerList">
+        <img class="image imageBorder" src="./img/sherlight.jpg" />
+        <p classs="story">sherlight</p>
+      </li>
+      <li class="followerList">
+        <img class="image imageBorder" src="./img/bl_wisan.jpg" />
+        <p classs="story">bl_wisan</p>
+      </li>
+      <li class="followerList">
+        <img class="image imageBorder" src="./img/design.ro.jpg" />
+        <p classs="story">design.ro</p>
+      </li>
+      <li class="followerList">
+        <img class="image imageBorder" src="./img/matto_collors.jpg" />
+        <p classs="story">matto_colors</p>
+      </li>
+      <li class="followerList">
+        <img class="image imageBorder" src="./img/clausen_sarah.jpg" />
+        <p classs="story">sarah_clauson</p>
+      </li>
+      <li class="followerList">
+        <img class="image imageBorder" src="./img/tanjia32413.jpg" />
+        <p classs="story">tanjia324413</p>
+      </li>
+      <li class="followerList">
+        <img class="image imageBorder" src="./img/yumtam.jpg" />
+        <p classs="story">yumtam</p>
+      </li>
+    </ul>
+    <div class="newPosts">
+      <section id="content">
+      <div class="post">
+        <div class="profile">
+          <img class="profileimage" src="./img/sherlight.jpg" alt="sherley"/>
+          <p class="profileName">sherlight</p>
+          <p class="date">1 Day</p>
+        </div>
+    <div>
+    <img class="postImage"src="./img/calgary.jpg">
+    </div>
+    <div class="postIcons">
+      <div class="postIconsleft">
+        <img class="icon" onclick=""src="./icons/heart.png" alt="likes">
+        <img class="icon" src="./icons/chat.png" alt="chat">
+        <img class="icon" src="./icons/news.png" alt="instagram">
+      </div>
+      <div class="postIconsRight">
+        <img class="icon" src="./icons/restore.png" alt="restore">
+    </div>
+    </div>
+    <div class="likes">
+       Likes 60 times
+    </div>
+    <div class="postComment">
+    <p> <i><b>sherlight</b></i> 
+      Calgary Tripp, the Tv Tower
+    </p>
+    <div id="comments">
+      <p>
+        <i><b>sarah_clauson</b></i> 
+        You are there now,Sherley??
+      </p>
+    </div>
+    <div id="commentsContent"></div>
+    <div class="commentsContent">
+      <input  type="text" class="inputComment" id="input" placeholder="Comment...">
+      <button onclick="addComment()">Post</button>
+    </div>
+    <div class="separator"></div>
+    </div>
+  </section>
     <script src="script.js"></script>
   </body>
 </html>

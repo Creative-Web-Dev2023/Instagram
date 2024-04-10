@@ -1,11 +1,10 @@
-
 body {
   margin: 0;
-  font-family: fantasy;
+  font-family: "Roboto", sans-serif;
 }
 
 .ul {
-  width: 220px;
+  width: 200px;
   height: 100vh;
   margin-top: 0;
   position: fixed;
@@ -35,7 +34,6 @@ body {
   cursor: pointer;
 }
 .instaclone {
-  font-family: "Dancing Script", cursive;
   font-optical-sizing: auto;
   font-weight: bold;
   padding-left: 0;
@@ -71,70 +69,138 @@ header {
   margin-top: 28px;
   padding-left: 25%;
 }
-.image{
-  width:60px;
-  height:60px;
+.image {
+  width: 60px;
+  height: 60px;
   border-radius: 100px;
   object-fit: cover;
 }
-.imageBorder{
+.imageBorder {
   border: 2px solid #ec5713;
-  padding:2px;
+  padding: 2px;
 }
-.followerList{
+.followerList {
   margin-right: 16px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.story{
-  display:flex;
+.story {
+  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 12px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-@media (max-width:1400px){
-    .instaclone{
-        display: none;
-    }
-    .list{
-        padding-top: 10px;
-        padding-bottom: 10px;
-        width:40px;
-    }
-    .menuLeft{
-        padding-left: 16px;
-    }
+.newPosts {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 15%;
 }
-@media (max-width: 912px){
-.mobile-header {
+#content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.profile{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center
+}
+.profileName{
+  font-weight: 400;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.date{
+  font-size: 14px;
+  color:gray;
+  margin-left: 10px;
+}
+.postImage{
+  width:500px;
+  height:427px;
+  border-radius: 7px;
+}
+.postIcons{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  margin-top:10px;
+  margin-bottom: 16px;
+}
+.commentsContent{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
-  margin-top: 0;
-  position: fixed;
-  background-color: white;
 }
-.mobile-icon{
+.inputComment{
+  width:300px;
+  height:20px;
+  border:none;
+}
+button{
+  border:none;
+  background-color: white;
+  color:rgb(96, 230, 234);
+  cursor: pointer;
+}
+.separator{
+  background-color: lightgrey;
+  height:1px;
+  margin-top:20px;
+  margin-bottom: 16px;
+}
+@media (max-width: 1400px) {
+  .instaclone {
+    display: none;
+  }
+  .list {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 40px;
+  }
+  .menuLeft {
+    padding-left: 16px;
+  }
+  .newPosts {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1160px) {
+  .newPosts {
+    margin-left: 0;
+  }
+}
+@media (max-width: 912px) {
+  .mobile-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.mobile-search-icon{
-    width:250px;
+    width: 100%;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
+    margin-top: 0;
+    position: fixed;
+    background-color: white;
+  }
+  .mobile-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mobile-search-icon {
+    width: 250px;
     background-color: #e8e6e6;
     margin-right: 16px;
-}
-.mobile-search{
+  }
+  .mobile-search {
     display: flex;
     margin: 0;
+  }
 }
-}
-@media (max-width:500px){
-    .list{
-        width:100px;
-    }
+@media (max-width: 500px) {
+  .list {
+    width: 100px;
+  }
 }
