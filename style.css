@@ -34,8 +34,8 @@ body {
   cursor: pointer;
 }
 .instaclone {
-  font-optical-sizing: auto;
-  font-weight: bold;
+  
+  font-family:serif;
   padding-left: 0;
   font-size: 34px;
   margin-bottom: 32px;
@@ -118,9 +118,11 @@ header {
   margin-left: 10px;
 }
 .postImage{
-  width:500px;
-  height:427px;
+  width:700px;
+  height:457px;
   border-radius: 7px;
+  object-fit: cover;
+
 }
 .postIcons{
   display: flex;
@@ -142,14 +144,24 @@ header {
 button{
   border:none;
   background-color: white;
-  color:rgb(96, 230, 234);
+  color:rgb(93, 47, 184);
   cursor: pointer;
+  font-weight: bold;
 }
 .separator{
   background-color: lightgrey;
   height:1px;
   margin-top:20px;
   margin-bottom: 16px;
+}
+.textalign{
+  text-align: center;
+}
+.menwithheart{
+  width: 50px;
+  height:50px;
+  padding-left: 12px;
+ 
 }
 @media (max-width: 1400px) {
   .instaclone {
