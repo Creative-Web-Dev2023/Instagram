@@ -2,16 +2,8 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
+/*Header li*/
 
-.ul {
-  width: 200px;
-  height: 100vh;
-  margin-top: 0;
-  position: fixed;
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
-  padding-inline-start: 25px; /*Abstand auf der linken Seite des Elements*/
-  list-style-type: none; /*marker von ul entfernen*/
-}
 .list {
   display: flex;
   justify-content: flex-start;
@@ -24,6 +16,15 @@ body {
 .list:hover {
   background-color: rgb(236, 233, 233);
 }
+.ul {
+  width: 220px;
+  height: 100vh;
+  margin-top: 0;
+  position: fixed;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
+  padding-inline-start: 25px;
+  list-style-type: none;
+}
 .logo {
   display: flex;
   justify-content: flex-start;
@@ -34,8 +35,7 @@ body {
   cursor: pointer;
 }
 .instaclone {
-  
-  font-family:serif;
+  font-family: serif;
   padding-left: 0;
   font-size: 34px;
   margin-bottom: 32px;
@@ -52,22 +52,23 @@ body {
   object-fit: cover;
   border-radius: 100px;
 }
-
-.mobile {
+.d-none {
   display: none;
 }
+
+/*Header mitte*/
 header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 .header {
+  margin-top: 28px;
+  padding-left: 25%;
   list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 28px;
-  padding-left: 25%;
 }
 .image {
   width: 60px;
@@ -83,88 +84,92 @@ header {
   margin-right: 16px;
   cursor: pointer;
 }
-
 .story {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 12px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-.newPosts {
-  display: flex;
-  justify-content: space-evenly;
-  margin-left: 15%;
-}
+
+/*NewPost*/
 #content {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.profile{
+.newPosts {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 15%;
+}
+.profile {
   display: flex;
   justify-content: flex-start;
-  align-items: center
+  align-items: center;
 }
-.profileName{
+.profileName {
   font-weight: 400;
   font-size: 14px;
   padding-left: 10px;
 }
-.date{
+.date {
   font-size: 14px;
-  color:gray;
+  color: gray;
   margin-left: 10px;
 }
-.postImage{
-  width:700px;
-  height:457px;
+.postImage {
+  width: 700px;
+  height: 457px;
   border-radius: 7px;
   object-fit: cover;
-
 }
-.postIcons{
+.postIcons {
   display: flex;
   justify-content: space-between;
-  align-items:center;
-  margin-top:10px;
+  align-items: center;
+  margin-top: 10px;
   margin-bottom: 16px;
 }
-.commentsContent{
+.commentsContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.inputComment{
-  width:300px;
-  height:20px;
-  border:none;
+.inputComment {
+  width: 300px;
+  height: 20px;
+  border: none;
 }
-button{
-  border:none;
+button {
+  border: none;
   background-color: white;
-  color:rgb(93, 47, 184);
+  color: rgb(93, 47, 184);
   cursor: pointer;
   font-weight: bold;
 }
-.separator{
+.separator {
   background-color: lightgrey;
-  height:1px;
-  margin-top:20px;
+  height: 1px;
+  margin-top: 20px;
   margin-bottom: 16px;
 }
-.textalign{
+.mobile {
+  display: none;
+}
+.textalign {
   text-align: center;
 }
-.menwithheart{
+.menwithheart {
   width: 50px;
-  height:50px;
+  height: 50px;
   padding-left: 12px;
- 
 }
 @media (max-width: 1400px) {
-  .instaclone {
+  .newPosts {
+    justify-content: center;
+  }
+  .menuLeft {
     display: none;
   }
   .list {
@@ -172,27 +177,46 @@ button{
     padding-bottom: 10px;
     width: 40px;
   }
-  .menuLeft {
-    padding-left: 16px;
+  .ul {
+    width: 50px;
   }
-  .newPosts {
-    justify-content: center;
+  .d-none {
+    display: flex;
+    margin-top: 45px;
+    margin-bottom: 32px;
+  }
+  .instaclone {
+    display: none;
   }
 }
-
+@media (max-width: 1300px) {
+  .header {
+    padding-left: 25%;
+  }
+}
 @media (max-width: 1160px) {
   .newPosts {
     margin-left: 0;
   }
+  .header {
+    padding-left: 20%;
+  }
 }
 @media (max-width: 912px) {
+  .postImage {
+    width: 500px;
+  }
+  .header {
+    display: none;
+  }
+
   .mobile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
     margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     background-color: white;
   }
@@ -201,18 +225,67 @@ button{
     justify-content: space-between;
     align-items: center;
   }
+  
   .mobile-search-icon {
     width: 250px;
     background-color: #e8e6e6;
     margin-right: 16px;
   }
+  .instaclone {
+    margin-bottom: 16px;
+    margin-top: 16px;
+    margin-left: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .mobile-search {
     display: flex;
     margin: 0;
   }
+  .ul {
+    display: none;
+  }
+  .d-none{
+    display: none;
+  }
+  #content {
+    margin-top: 100px;
+  }
 }
+
+@media (max-width: 640px) {
+  .postImage {
+    width: 400px;
+  }
+}
+
 @media (max-width: 500px) {
   .list {
     width: 100px;
+  }
+  .postImage {
+    width: 300px;
+  }
+  .heart {
+    width: 50px;
+  }
+}
+@media (max-width: 340px) {
+  .mobile-search-icon {
+    display: none;
+  }
+  .postImage {
+    width: 250px;
+  }
+  .post {
+    width: 250px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .newPosts {
+    justify-content: flex-start;
+    margin-left: 25%;
   }
 }
