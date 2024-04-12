@@ -35,10 +35,11 @@ body {
   cursor: pointer;
 }
 .instaclone {
-  font-family: serif;
+  font-family: 'Trebuchet MS', serif, cursive;
   padding-left: 0;
   font-size: 34px;
   margin-bottom: 32px;
+  color:rgb(112, 132, 106)
 }
 .icon {
   width: 25px;
