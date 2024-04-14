@@ -14,8 +14,7 @@ let posts = [
     authorimg: "img/bl_wisan.jpg",
     authorname: 'bl_wisan',
     image: "img/violinplayer.jpg",
-    description:
-      " In Washington DC, at a Metro Station, on a cold January <br>morning in 2007,<br>a man with a violin played six Bach <br> pieces for about 45 minutes.",
+    description: " A man with a violin in Waschington DC.",
     like: 60,
     liked: false,
     comment: ['kay-ladwig : Thanks for sharing🥰'],
@@ -37,11 +36,10 @@ let posts = [
     authorimg: "img/clausen_sarah.jpg",
     authorname: 'sarah_clauson',
     image: "img/grandson.jpg",
-    description:
-      "Paul harveys letter to his grandchildren</i><br> We tried so hard to make things better for <br> our kids that we made them worse.<br> For my grandchildren,<br> Id like better.",
+    description: 'We tried so hard \n to make things better \n for our kids that we made them worse.',
     like: 200,
     liked: false,
-    comment: ["shirley prosperion:I miss the simpler times...."],
+    comment: ["shirley prosperion: I miss the simpler times...."],
     myComments: [],
     date: "10 Hours",
   },
@@ -49,7 +47,7 @@ let posts = [
     authorimg: "img/matto_collors.jpg",
     authorname: 'matto_collors',
     image: "img/Natur.jpg",
-    description: "",
+    description: "Spring is comming",
     like: 30,
     liked: false,
     comment: ["judith grebowsk: awesome"],
@@ -60,10 +58,10 @@ let posts = [
     authorimg: "img/yumtam.jpg",
     authorname: 'yumtam',
     image: "img/ungarischesgericht.jpg",
-    description: "",
+    description: "Recept from my mom",
     like: 30,
     liked: false,
-    comment: ["<b>judith grebowski</b>awesome "],
+    comment: ["sharon gossellen: delicious!!"],
     myComments: [],
     date: "10 Hours",
   },
@@ -92,7 +90,7 @@ function render() {
 
   for (let i = 0; i < posts.length; i++) {
     let post = posts[i];
-    content.innerHTML += generatePostsHTML(i, post);
+    content.innerHTML+= generatePostsHTML(i, post);
     renderComment(i);
     saveArray();
 }
@@ -137,15 +135,6 @@ function generatePostsHTML(i, post){
 }
 
 
-function addRedHeart(i) {
-  if (posts[i]["liked"]){
-    return "./icon/heart_red.jpg";
-  } else {
-    return "./icon/heart.png";
-  }
- }
-
-
 function renderComment(i){
     let commentsContent = document.getElementById(`commentsContent${i}`);
 
@@ -167,14 +156,26 @@ function addComment(i){
     }
   }
 
+
 function like(i){
  posts[i]["liked"] = !posts[i]["liked"];  // liked-heart umkehren
 
- if (posts[i]["liked"]) {
-  posts[i]["like"]++; //erhöhe die Anzahl der likes um 1
-} else {
-  posts[i]["like"]--; //sonst reduziere sie um 1
-
-  render(); // neu rendern, um die Änderungen anzuzeigen
+  if (posts[i]["liked"]) {
+     posts[i]["like"]++; //erhöhe die Anzahl der likes um 1
+   } else {
+    console.log("like")
+     posts[i]["like"]--; //sonst reduziere sie um 1
+     
+     render(); // neu rendern, um die Änderungen anzuzeigen
+  }
 }
+
+function addRedHeart(i) {
+  if (posts[i] && posts[i]["liked"]) { //&& =und gibt true wnn die Bedingung wahr ist, sonst false
+    console.log("post ist liked, return red heart")
+    return "./icons/heart_red.jpg"; 
+  } else {
+    console.log("Post is not liked, return heart image")
+    return "./icons/heart.png"; 
+  }
 }
