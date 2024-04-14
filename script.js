@@ -127,7 +127,7 @@ function generatePostsHTML(i, post){
     </div>
     <div id="commentsContent${i}"></div>
     <div class="commentsContent">
-       <input  type="text" class="inputComment" id="input${i}" placeholder="Comment..."><button onclick="addComment(${i})">Post</button>
+       <input type="text" class="inputComment" id="input${i}" placeholder="Comment..."><button onclick="addComment(${i})">Post</button>
      </div>
      <div class="separator"></div>
     </div>
@@ -166,14 +166,15 @@ function like(i){
     console.log("like")
      posts[i]["like"]--; //sonst reduziere sie um 1
      
-     render(); // neu rendern, um die Änderungen anzuzeigen
+     
   }
+  render(); // neu rendern, um die Änderungen anzuzeigen
 }
 
 function addRedHeart(i) {
-  if (posts[i] && posts[i]["liked"]) { //&& =und gibt true wnn die Bedingung wahr ist, sonst false
+  if (posts[i] && posts[i]["liked"]) { //&& =und gibt true wenn die Bedingung wahr ist, sonst false
     console.log("post ist liked, return red heart")
-    return "./icons/heart_red.jpg"; 
+    return "./icons/heart_red.png"; 
   } else {
     console.log("Post is not liked, return heart image")
     return "./icons/heart.png"; 
