@@ -3,10 +3,10 @@ let posts = [
     authorimg: "img/sherlight.jpg",
     authorname: 'sherlight',
     image: "img/calgary.jpg",
-    description: "Calgary Tripp, the Tv Tower",
+    description: "<small>Calgary Tripp, the Tv Tower</small>",
     like: 60,
     liked: false,
-    comment: ["sarah_clauson:Are you there now,Sherley??"],
+    comment: ["<small>sarah_clauson:Are you there now,Sherley??</small>"],
     myComments: [],
     date: '1 Day',
   },
@@ -14,10 +14,10 @@ let posts = [
     authorimg: "img/bl_wisan.jpg",
     authorname: 'bl_wisan',
     image: "img/violinplayer.jpg",
-    description: " A man with a violin in Waschington DC.",
+    description: " <small>A man with a violin in Waschington DC.</small>",
     like: 60,
     liked: false,
-    comment: ['kay-ladwig : Thanks for sharing🥰'],
+    comment: ['<small>kay-ladwig : Thanks for sharing🥰</small>'],
     myComments: [],
     date: '23 Hours',
   },
@@ -25,10 +25,10 @@ let posts = [
     authorimg: "img/design.jpg",
     authorname: 'design.ro',
     image: "img/livingroom.jpg",
-    description: "My new livingroom",
+    description: "<small>My new livingroom</small>",
     like: 30,
     liked: false,
-    comment: ["cathy markman:I love this!😍"],
+    comment: ["<small>cathy markman:I love this!😍</small>"],
     myComments: [],
     date: '12 Hours',
   },
@@ -36,10 +36,10 @@ let posts = [
     authorimg: "img/clausen_sarah.jpg",
     authorname: 'sarah_clauson',
     image: "img/grandson.jpg",
-    description: 'We tried so hard \n to make things better \n for our kids that we made them worse.',
+    description: '<small>We tried so hard to <br> make things better...</small>',
     like: 200,
     liked: false,
-    comment: ["shirley prosperion: I miss the simpler times...."],
+    comment: ["<small>shirley prosperion: I miss the simpler times....</small>"],
     myComments: [],
     date: "10 Hours",
   },
@@ -47,10 +47,10 @@ let posts = [
     authorimg: "img/matto_collors.jpg",
     authorname: 'matto_collors',
     image: "img/Natur.jpg",
-    description: "Spring is comming",
+    description: "<small>Spring is comming</small>",
     like: 30,
     liked: false,
-    comment: ["judith grebowsk: awesome"],
+    comment: ["<small>judith grebowsk: awesome</small>"],
     myComments: [],
     date: "10 Hours",
   },
@@ -58,10 +58,10 @@ let posts = [
     authorimg: "img/yumtam.jpg",
     authorname: 'yumtam',
     image: "img/ungarischesgericht.jpg",
-    description: "Recept from my mom",
+    description: "<small>Rezept from my mom</small>",
     like: 30,
     liked: false,
-    comment: ["sharon gossellen: delicious!!"],
+    comment: ["<small>sharon gossellen: delicious!!</small>"],
     myComments: [],
     date: "10 Hours",
   },
@@ -95,6 +95,7 @@ function render() {
     saveArray();
 }
 }
+
 
 function generatePostsHTML(i, post){
   return /* html */`
@@ -158,21 +159,22 @@ function addComment(i){
 
 
 function like(i){
- posts[i]["liked"] = !posts[i]["liked"];  // liked-heart umkehren
+ posts[i]["liked"] = !posts[i]["liked"];  
 
   if (posts[i]["liked"]) {
-     posts[i]["like"]++; //erhöhe die Anzahl der likes um 1
+     posts[i]["like"]++; 
    } else {
     console.log("like")
-     posts[i]["like"]--; //sonst reduziere sie um 1
+     posts[i]["like"]--;
      
      
   }
-  render(); // neu rendern, um die Änderungen anzuzeigen
+  render(); 
 }
 
+
 function addRedHeart(i) {
-  if (posts[i] && posts[i]["liked"]) { //&& =und gibt true wenn die Bedingung wahr ist, sonst false
+  if (posts[i] && posts[i]["liked"]) { 
     console.log("post ist liked, return red heart")
     return "./icons/heart_red.png"; 
   } else {
