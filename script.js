@@ -169,16 +169,19 @@ function like(i){
      
      
   }
-  render(); 
+ let postImage = document.getElementById(`postImage${i}`);
+ postImage.src= addRedHeart(i);
+
+ saveArray();
 }
 
 
 function addRedHeart(i) {
   if (posts[i] && posts[i]["liked"]) { 
-    console.log("post ist liked, return red heart")
+    
     return "./icons/heart_red.png"; 
   } else {
-    console.log("Post is not liked, return heart image")
+   
     return "./icons/heart.png"; 
   }
 }

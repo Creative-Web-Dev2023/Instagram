@@ -270,12 +270,12 @@ button {
     width: 100px;
   }
   .postImage {
-    width: 300px;
+    width: 400px;
   }
   .heart {
     width: 50px;
   }
-}
+ 
 @media (max-width: 340px) {
   .mobile-search-icon {
     display: none;
@@ -293,4 +293,5 @@ button {
     justify-content: flex-start;
     margin-left: 25%;
   }
+}
 }
