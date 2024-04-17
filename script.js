@@ -67,7 +67,10 @@ let posts = [
   },
 ]
 
-loadArray();
+function init(){
+  loadArray();
+  render();
+}
 
 
 function saveArray() {
@@ -90,14 +93,15 @@ function render() {
 
   for (let i = 0; i < posts.length; i++) {
     let post = posts[i];
-    content.innerHTML+= generatePostsHTML(i, post);
+    let heartIcon = post.liked ? './icons/heart_red.png' : './icons/heart.png';  //?= wenn ja, :=bedeutet else
+    content.innerHTML+= generatePostsHTML(i, post, heartIcon);
     renderComment(i);
     saveArray();
 }
 }
 
 
-function generatePostsHTML(i, post){
+function generatePostsHTML(i, post,heartIcon){
   return /* html */`
   <div class="post">
         <div class="profile">
@@ -106,11 +110,11 @@ function generatePostsHTML(i, post){
           <p class="date">${post["date"]}</p>
         </div>
        <div>
-       <img class="postImage"src="${post["image"]}">
+       <img id="postImage" class="postImage"src="${post["image"]}">
        </div>
       <div class="postIcons">
       <div class="postIconsleft">
-          <img class="icon" onclick="like(${i})"src="${addRedHeart(i)}">
+          <img class="icon" onclick="like(${i})"src="${heartIcon}">
           <img class="icon" src="./icons/news.png" alt="instagram">
           <img class="icon" src="./icons/restore.png"alt="store">
       </div>
@@ -138,6 +142,7 @@ function generatePostsHTML(i, post){
 
 function renderComment(i){
     let commentsContent = document.getElementById(`commentsContent${i}`);
+    commentsContent.innerHTML = ''; 
 
     for (let j = 0; j < posts[i]['myComments'].length; j++) {
         let comment = posts[i]['myComments'][j];
@@ -149,39 +154,25 @@ function renderComment(i){
 
 function addComment(i){ 
     let input = document.getElementById(`input${i}`).value;
+    document.getElementById(`input${i}`).value = '';
+
     if (input === "") {
     } else {
         posts[i].myComments.push(input)
-        render();
+       renderComment(i);
         saveArray();
     }
   }
 
 
 function like(i){
- posts[i]["liked"] = !posts[i]["liked"];  
-
-  if (posts[i]["liked"]) {
-     posts[i]["like"]++; 
-   } else {
-    console.log("like")
-     posts[i]["like"]--;
-     
-     
+  if (posts[i].like) {
+    posts[i].like --;
+  } else{
+    posts[i].like ++;
   }
- let postImage = document.getElementById(`postImage${i}`);
- postImage.src= addRedHeart(i);
-
- saveArray();
+  posts[i].liked = !posts[i].liked; 
+  saveArray();
+  render();
 }
 
-
-function addRedHeart(i) {
-  if (posts[i] && posts[i]["liked"]) { 
-    
-    return "./icons/heart_red.png"; 
-  } else {
-   
-    return "./icons/heart.png"; 
-  }
-}
