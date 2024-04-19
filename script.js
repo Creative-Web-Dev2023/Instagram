@@ -159,7 +159,7 @@ function addComment(i){
     if (input === "") {
     } else {
         posts[i].myComments.push(input)
-       renderComment(i);
+        renderComment(i);
         saveArray();
     }
   }
